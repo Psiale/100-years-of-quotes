@@ -1,3 +1,6 @@
+# The Helperable module includes several miscellanium
+# functions like validators
+# and functions to get input from the user
 module Helperable
   def path_validator(nokogiri_object, paths)
     if !paths.empty?
@@ -19,36 +22,59 @@ module Helperable
       if quote.text.include? "\“"
 
         arr_of_quotes << "#{quote.text} \n
-          Gabriel Garcia Marquez - One Hundred Years Of Solitude \n 
+          Gabriel Garcia Marquez - One Hundred Years Of Solitude \n
           ------------------------------------------------------"
       end
     end
     arr_of_quotes
-   end
+  end
 
-   def greetings
+  def greetings
     puts "Hello, I'm here to provide you with 100 years of solitud quotes"
-    puts 'Options to get (a) quote(s)'
-    puts "rand = will get you a random quote \n
+    puts 'Options to get (a) quote(s):'
+    puts "\n
+          rand = will get you a random quote \n
           top = will get you the top 10 quotes of our list \n
-          all = will get you all the quotes"
-end
-
-def calling_quotes(hash_of_quotes)
-    greetings
-    puts 'Put something: '
-    quote_option = gets.chomp
-    case quote_option.downcase
+          all = will get you all the quotes\n
+          exit = If you want to exit the program"
+  end
+def user_options_to_get_quotes(input,hash_of_quotes)
+    case input.downcase
     when 'rand'
-        puts hash_of_quotes[rand(0..hash_of_quotes.length-1)]
+      puts hash_of_quotes[rand(0..hash_of_quotes.length - 1)]
+      exit!
     when 'top'
-        hash_of_quotes.values[0..9].each_with_index do |value,index|
-            puts "#{index+1}. \n \n #{value.strip}"
-            puts "\n"
-        end
+      hash_of_quotes.values[0..9].each_with_index do |value, index|
+        puts "#{index + 1}. \n \n #{value.strip}"
+        puts "\n"
+        sleep 5
+      end
+      exit!
     when 'all'
-        puts hash_of_quotes.values
+      hash_of_quotes.each_value do |quote|
+        puts quote
+        sleep 5
+      end
+      exit!
+    when 'exit'
+      exit!
+    else
+      puts 'invalid option'
     end
 end
 
+  def options_loop(hash_of_quotes)
+    no_valid_input = true
+    while no_valid_input
+      puts 'Type a valid option, please: '
+      quote_option = gets.chomp
+      user_options_to_get_quotes(quote_option, hash_of_quotes)
+    end
+  end
+
+  def calling_quotes(hash_of_quotes)
+    greetings
+    sleep 5
+    options_loop(hash_of_quotes)
+  end
 end
