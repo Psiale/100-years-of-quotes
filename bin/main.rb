@@ -1,25 +1,24 @@
 require 'open-uri'
 require 'nokogiri'
+require_relative '../lib/modules/helperable.rb'
 require_relative '../lib/classes/nokogiri_object.rb'
+include Helperable
 
-# Frases en inglés 
-short_quote = NokogiriObject.new("https://www.litcharts.com/lit/one-hundred-years-of-solitude/quotes")
+# Frases en inglés
+quote_source = NokogiriObject.new("https://www.goodreads.com/work/quotes/3295655-cien-a-os-de-soledad")
 
-sqp = short_quote.nokogiri_builder(short_quote.url,"//p[@class='quote-text']")
-arr_of_short_quotes = []
-hash_of_quotes = { }
+quote_results = quote_source.nokogiri_builder(quote_source.url, "//div[@class ='quoteText']/text()")
+hash_of_quotes = {}
 
- sqp.each do |quote|
-    arr_of_short_quotes << quote.text.gsub(/ \Wu201\w([\W])* /," ")
- end
+quote_validator(quote_results).each_with_index { |item, index|
+  hash_of_quotes[index] = item
+}
 
- arr_of_short_quotes.each_with_index { |item, index|
-    hash_of_quotes[index] = item  }
+# puts hash_of_quotes.values
+puts hash_of_quotes[6]
 
- puts hash_of_quotes.values
-
- # so far I have the quotes now I have to join some of them
- # I fucking hate this shit
+# so far I have the quotes now I have to join some of them
+# I fucking hate this shit
 # Frases en español
 # life_url = open("https://www.lifeder.com/frases-de-cien-anos-de-soledad/").read
 # life_path = "//p/span"

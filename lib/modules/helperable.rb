@@ -9,7 +9,18 @@ module Helperable
       end
 
     else
-      puts noo!
+      puts 'Invalid format please use a xpath or a css selector path'
     end
   end
+
+  def quote_validator(nokogiri_with_path)
+    arr_of_quotes = []
+    nokogiri_with_path.each do |quote|
+      if quote.text.include? "\“"
+
+        arr_of_quotes << "#{quote.text} \n  Gabriel Garcia Marquez - One Hundred Years Of Solitude "
+      end
+    end
+    arr_of_quotes
+   end
 end
