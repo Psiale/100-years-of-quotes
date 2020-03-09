@@ -3,19 +3,20 @@ require 'nokogiri'
 require_relative '../lib/modules/helperable.rb'
 require_relative '../lib/classes/nokogiri_object.rb'
 include Helperable
+hash_of_quotes = {}
+
 
 # Frases en inglés
-quote_source = NokogiriObject.new("https://www.goodreads.com/work/quotes/3295655-cien-a-os-de-soledad")
+QUOTE_SOURCE = NokogiriObject.new("https://www.goodreads.com/work/quotes/3295655-cien-a-os-de-soledad")
 
-quote_results = quote_source.nokogiri_builder(quote_source.url, "//div[@class ='quoteText']/text()")
-hash_of_quotes = {}
+quote_results = QUOTE_SOURCE.nokogiri_builder(QUOTE_SOURCE.url, "//div[@class ='quoteText']/text()")
 
 quote_validator(quote_results).each_with_index { |item, index|
   hash_of_quotes[index] = item
 }
 
 # puts hash_of_quotes.values
-puts hash_of_quotes[6]
+calling_quotes(hash_of_quotes)
 
 # so far I have the quotes now I have to join some of them
 # I fucking hate this shit
