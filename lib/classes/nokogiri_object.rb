@@ -1,6 +1,12 @@
 require 'nokogiri'
 require 'open-uri'
 require_relative '../modules/helperable.rb'
+
+# The NokogiriObject Class inherits the nokogiri library
+# and creates a nokogiri object
+# It also has a function for you to provide xpaths or css.selector
+# a path validator that checks if the string you provided is a
+# valid xpath or css.selector
 class NokogiriObject
   include Helperable
   attr_accessor(:url)
@@ -8,23 +14,9 @@ class NokogiriObject
     @url = url
   end
 
-  def nokogiri_builder(url, paths = "")
+  def nokogiri_builder(url, paths = '')
     url_parsed = URI.parse(url)
-    nokogiri = Nokogiri::HTML("#{open(url_parsed).read}")
+    nokogiri = Nokogiri::HTML(open(url_parsed).read)
     path_validator(nokogiri, paths)
   end
-
-  def path_validator(nokogiri_object, paths)
-    if !paths.empty?
-      case paths
-      when paths.include?("/")
-        nokogiri_object.xpath(paths)
-      else
-        nokogiri_object.css(paths)
-      end
-
-    else
-      nokogiri_object
-        end
-      end
 end

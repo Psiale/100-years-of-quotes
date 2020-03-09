@@ -6,9 +6,9 @@ module Helperable
     if !paths.empty?
       case paths
       when paths.include?('/')
-        nokogiri_object.xpath(paths).text
+        nokogiri_object.xpath(paths)
       else
-        nokogiri_object.css(paths).text
+        nokogiri_object.css(paths)
       end
 
     else
@@ -38,7 +38,8 @@ module Helperable
           all = will get you all the quotes\n
           exit = If you want to exit the program"
   end
-def user_options_to_get_quotes(input,hash_of_quotes)
+
+  def user_options_to_get_quotes(input, hash_of_quotes)
     case input.downcase
     when 'rand'
       puts hash_of_quotes[rand(0..hash_of_quotes.length - 1)]
@@ -61,7 +62,7 @@ def user_options_to_get_quotes(input,hash_of_quotes)
     else
       puts 'invalid option'
     end
-end
+  end
 
   def options_loop(hash_of_quotes)
     no_valid_input = true
