@@ -40,7 +40,7 @@ module Helperable
       exit!
     when 'top'
       hash_of_quotes.values[0..9].each_with_index do |value, index|
-        puts "#{index + 1}. \n \n #{value.text.strip}"
+        puts "#{index + 1}. \n \n #{value.strip}"
         puts "\n"
         sleep 5
       end
