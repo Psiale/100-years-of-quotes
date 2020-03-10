@@ -2,10 +2,10 @@ require_relative '../lib/modules/helperable.rb'
 require 'nokogiri'
 require 'open-uri'
 
-RSpec.describe Helperable do
+describe Helperable do
   let(:dummy_class) { Class.new { extend Helperable } }
   let(:url) { 'https://www.microverse.org' }
-  let(:nokogiri) { Nokogiri::HTML(open(url).read) }
+  let(:nokogiri) { Nokogiri::HTML(URI.parse(url).open) }
   let(:hash_for_testing) { { '1' => 'Hello' } }
 
   describe '#path_validator' do

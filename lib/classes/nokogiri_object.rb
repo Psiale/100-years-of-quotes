@@ -15,8 +15,8 @@ class NokogiriObject
   end
 
   def nokogiri_builder(url, paths = '')
-    url_parsed = URI.parse(url)
-    nokogiri = Nokogiri::HTML(open(url_parsed).read)
+    url_parsed = URI.parse(url).open
+    nokogiri = Nokogiri::HTML(url_parsed)
     path_validator(nokogiri, paths)
   end
 end

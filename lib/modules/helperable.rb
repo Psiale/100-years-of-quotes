@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # The Helperable module includes several miscellanium
 # functions like validators
 # and functions to get input from the user
@@ -14,19 +12,13 @@ module Helperable
       end
 
     else
-      puts'Invalid format please use a xpath or a css selector path '
+      puts 'Invalid format please use a xpath or a css selector path '
     end
   end
 
   def quote_validator(nokogiri_with_path)
-    arr_of_quotes = []
-    nokogiri_with_path.each do |quote|
-      if quote.text.include? "\“"
-
-        arr_of_quotes << "#{quote.text} \n
-          Gabriel Garcia Marquez - One Hundred Years Of Solitude \n
-          ------------------------------------------------------"
-      end
+    arr_of_quotes = nokogiri_with_path.select do |quote|
+      quote.text.include? "\“"
     end
     arr_of_quotes
   end
@@ -37,7 +29,6 @@ module Helperable
     puts "\n
           rand = will get you a random quote \n
           top = will get you the top 10 quotes of our list \n
-          all = will get you all the quotes\n
           exit = If you want to exit the program"
   end
 
@@ -45,18 +36,12 @@ module Helperable
     case input.downcase
     when 'rand'
       puts hash_of_quotes[rand(0..hash_of_quotes.length - 1)]
-      sleep 15
+      sleep 10
       exit!
     when 'top'
       hash_of_quotes.values[0..9].each_with_index do |value, index|
-        puts "#{index + 1}. \n \n #{value.strip}"
+        puts "#{index + 1}. \n \n #{value.text.strip}"
         puts "\n"
-        sleep 5
-      end
-      exit!
-    when 'all'
-      hash_of_quotes.each_value do |quote|
-        puts quote
         sleep 5
       end
       exit!
