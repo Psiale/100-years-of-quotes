@@ -13,8 +13,8 @@ quote_results = QUOTE_SOURCE
                 .nokogiri_builder(QUOTE_SOURCE.url,
                                   "//div[@class ='quoteText']/text()")
 
-quote_validator(quote_results).each_with_index do |item, index|
-  hash_of_quotes[index] = item
+quote_validator(quote_results).each_with_index do |items, index|
+  hash_of_quotes[index] = items
 end
 
 calling_quotes(hash_of_quotes)
