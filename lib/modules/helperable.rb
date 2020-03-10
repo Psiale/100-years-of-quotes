@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The Helperable module includes several miscellanium
 # functions like validators
 # and functions to get input from the user
@@ -30,7 +32,7 @@ module Helperable
   end
 
   def greetings
-    puts "Hello, I'm here to provide you with 100 years of solitud quotes"
+    puts "Hello, I'm here to provide you with 100 years of solitude quotes"
     puts 'Options to get (a) quote(s):'
     puts "\n
           rand = will get you a random quote \n
@@ -43,6 +45,7 @@ module Helperable
     case input.downcase
     when 'rand'
       puts hash_of_quotes[rand(0..hash_of_quotes.length - 1)]
+      sleep 15
       exit!
     when 'top'
       hash_of_quotes.values[0..9].each_with_index do |value, index|

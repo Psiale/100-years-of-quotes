@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/classes/nokogiri_object.rb'
 require_relative '../lib/modules/helperable.rb'
 require 'nokogiri'
