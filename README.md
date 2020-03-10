@@ -3,9 +3,9 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Game Rules](#Game-rules)
+* [Game Rules](#Program-Options)
 * [Pre-requisites](#Pre-requisites)
-* [Installation](#Installing-the-game)
+* [Installation](#Installing-the-program)
 * [Built With](#built-with)
 * [License](#license)
 * [Authors](#Authors)
@@ -17,11 +17,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Recreation of the classic TicTacToe game
+This program provides you with quotes from the 100 years of solitude book.
 
-![screenshot](./assets/tic-tac-toe.png)
+![screenshot](./assets/project.jpeg)
  
-## Game options
+## Program options
  - After the welcome message is displayed you can type: 
  - "rand" will get you a random quote
  - "top" will get you the top ten quotes 
