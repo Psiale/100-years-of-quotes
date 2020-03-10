@@ -14,7 +14,7 @@ module Helperable
       end
 
     else
-      puts 'Invalid format please use a xpath or a css selector path'
+      puts'Invalid format please use a xpath or a css selector path '
     end
   end
 
@@ -82,3 +82,4 @@ module Helperable
     options_loop(hash_of_quotes)
   end
 end
+# create and array with the valid options and check if the option exist
