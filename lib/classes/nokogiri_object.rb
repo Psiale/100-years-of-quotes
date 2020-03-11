@@ -9,7 +9,7 @@ require_relative '../modules/helperable.rb'
 # valid xpath or css.selector
 class NokogiriObject
   include Helperable
-  attr_accessor(:url)
+  attr_reader(:url)
   def initialize(url)
     @url = url
   end

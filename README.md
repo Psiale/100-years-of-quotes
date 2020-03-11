@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Game Rules](#Program-Options)
+* [Program Options](#Program-Options)
 * [Pre-requisites](#Pre-requisites)
 * [Installation](#Installing-the-program)
 * [Built With](#built-with)
@@ -38,7 +38,7 @@ on your computer
 - On the terminal run the following commands: 
 -   "bundle install" for easy management of gems files
 - Git clone(download) the project by running "git clone https://github.com/Psiale/100-years-of-quotes"
-- cd into the project folder
+- cd (cd-100-years-of-quotes) into the project folder
 - Run bundle install
 - cd into bin "cd bin"
 - make the main file executable on [linux](https://commandercoriander.net/blog/2013/02/16/making-a-ruby-script-executable/), [windows](https://stackoverflow.com/questions/1422380/how-to-i-launch-a-ruby-script-from-the-command-line-by-just-its-name)  or run "ruby main.rb"

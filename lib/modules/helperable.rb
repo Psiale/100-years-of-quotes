@@ -22,9 +22,8 @@ module Helperable
     end
     arr_of_quotes
   end
-
-  def greetings
-    puts "Hello, I'm here to provide you with 100 years of solitude quotes"
+  
+  def keyword_options
     puts 'Options to get (a) quote(s):'
     puts "\n
           rand = will get you a random quote \n
@@ -32,19 +31,24 @@ module Helperable
           exit = If you want to exit the program"
   end
 
+  def greetings
+    puts "Hello, I'm here to provide you with 100 years of solitude quotes"
+    keyword_options
+  end
+
   def user_options_to_get_quotes(input, hash_of_quotes)
     case input.downcase
     when 'rand'
       puts hash_of_quotes[rand(0..hash_of_quotes.length - 1)]
       sleep 10
-      exit!
+      keyword_options
     when 'top'
       hash_of_quotes.values[0..9].each_with_index do |value, index|
         puts "#{index + 1}. \n \n #{value.strip}"
         puts "\n"
         sleep 5
       end
-      exit!
+      keyword_options
     when 'exit'
       exit!
     else
