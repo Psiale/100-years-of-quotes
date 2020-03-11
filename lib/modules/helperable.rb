@@ -22,7 +22,7 @@ module Helperable
     end
     arr_of_quotes
   end
-  
+
   def keyword_options
     puts 'Options to get (a) quote(s):'
     puts "\n
