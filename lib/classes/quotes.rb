@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require_relative '../modules/helperable.rb'
-require_relative '../classes/nokogiri_object.rb'
+require_relative './nokogiri_object.rb'
 class Quotes
   extend Helperable
   hash_of_quotes = {}
