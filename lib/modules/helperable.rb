@@ -67,7 +67,7 @@ module Helperable
 
   def calling_quotes(hash_of_quotes)
     greetings
-    sleep 5
+    sleep 4
     options_loop(hash_of_quotes)
   end
 end
