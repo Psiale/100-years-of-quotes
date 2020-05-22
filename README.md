@@ -3,14 +3,13 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-* [Program Options](#Program-Options)
-* [Pre-requisites](#Pre-requisites)
-* [Installation](#Installing-the-program)
+* [Program Options](#program-options)
+* [Pre-requisites](#pre-requisites)
+* [Installation](#installing-the-program)
 * [Built With](#built-with)
+* [Author](#author)
+* [Contributing](#contributing)
 * [License](#license)
-* [Authors](#Authors)
-* [Contributing](#Contributing)
-* [License](#License)
 
 
 
@@ -49,15 +48,14 @@ on your computer
 This project was built using Ruby. 
 
 
-## Authors
+## Author
 
 👤 **Alexis Sanchez**
+- Github: [@Psiale](https://github.com/Psiale)
+- Twitter: [@TFH_](https://twitter.com/TFH_)
+- Linkedin: [Alexis Sanchez](https://www.linkedin.com/in/alexis-sanchez-dev/)
 
-- Github: [Alexis Sanchez](https://github.com/Psiale)
-- Twitter: [Alexis Sanchez](https://twitter.com/TFH_)
-- Linkedin: [Alexis Sanchez](https://www.linkedin.com/in/alexis-gabriel-sánchez-cárcamo-264ba7194/)
-
-## 🤝 Contributing
+## Contributing 
 
 Contributions, issues and feature requests are welcome!
 
@@ -67,6 +65,6 @@ Feel free to check the [issues page](https://github.com/Psiale/100-years-of-quot
 
 Give a ⭐️ if you like this project!
 
-## 📝 License
+## License
 
 This project is [MIT](lic.url) licensed.
